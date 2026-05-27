@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 mb-4">
+        <h1 class="fw-bold text-primary">⚡ Ultra Admin Control Center</h1>
+        <p class="text-muted">Master architecture override layer. You have absolute system control.</p>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body p-4">
+                <h4 class="fw-bold text-dark mb-3">Create System Account</h4>
+                <p class="text-muted small">Generate pre-unlocked Admin or Employee credentials.</p>
+                <hr>
+                <form method="POST" action="/system/create-account">
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Full Name</label>
+                        <input type="text" name="full_name" class="form-control" placeholder="e.g. Sawyer" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Username</label>
+                        <input type="text" name="username" class="form-control" placeholder="e.g. sawyer_admin" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Temporary Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Assign Security Role</label>
+                        <select name="role" class="form-select">
+                            <option value="admin">Admin (Brother/Operations)</option>
+                            <option value="employee">Employee (Spa Worker)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 fw-bold mt-2">Generate Credentials</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 mb-4">
+        <div class="card">
+            <div class="card-body p-4">
+                <h4 class="fw-bold text-dark mb-3">User Access Control Matrix</h4>
+                <p class="text-muted small">Manage Approach B public registrations, toggle activation locks, and manage custom family discounts.</p>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mt-3">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Role</th>
+                                <th>Discount</th>
+                                <th>Status</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Aunt Sarah</strong></td>
+                                <td class="text-muted">sarah_spa9</td>
+                                <td class="text-uppercase small fw-bold"><span class="badge bg-secondary">User</span></td>
+                                <td class="text-primary fw-bold">25.32%</td>
+                                <td><span class="badge bg-danger">Locked</span></td>
+                                <td class="text-end">
+                                    <button class="btn btn-success btn-sm fw-bold px-3">Unlock Account</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sawyer</strong></td>
+                                <td class="text-muted">sawyer_admin</td>
+                                <td class="text-uppercase small fw-bold"><span class="badge bg-primary">Admin</span></td>
+                                <td class="text-muted">0.00%</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                                <td class="text-end">
+                                    <button class="btn btn-outline-danger btn-sm px-3">Lock</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

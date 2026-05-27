@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 mb-4 d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="fw-bold text-dark">💼 Spa Operations Dashboard</h1>
+            <p class="text-muted">Review incoming family requests, allocate staff, and track manual employee balances.</p>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body p-4">
+                <h4 class="fw-bold text-primary mb-4">Pending Booking Requests Queue</h4>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Client</th>
+                                <th>Requested Service</th>
+                                <th>Date/Time</th>
+                                <th>Assign Worker</th>
+                                <th class="text-end">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mom</strong></td>
+                                <td>Cucumber Face Mask <span class="badge bg-light text-dark text-muted small">Add-On</span></td>
+                                <td>May 30 @ 2:00 PM</td>
+                                <td>
+                                    <select class="form-select form-select-sm" style="max-width: 160px;">
+                                        <option>Select Staff...</option>
+                                        <option value="Liam">Liam</option>
+                                        <option value="Sawyer">Sawyer</option>
+                                    </select>
+                                </td>
+                                <td class="text-end">
+                                    <button class="btn btn-success btn-sm fw-bold me-1">Approve</button>
+                                    <button class="btn btn-outline-danger btn-sm">Decline</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 mt-4">
+        <div class="card">
+            <div class="card-body p-4">
+                <h4 class="fw-bold text-dark mb-3">Completed Services Ledger & Manual Payout Engine</h4>
+                <p class="text-muted small">Review finished services and input custom payouts directly to the employee's running digital wallet.</p>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Worker</th>
+                                <th>Service Rendered</th>
+                                <th>Price Charged</th>
+                                <th>Input Custom Payout Amount</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge bg-info text-dark">Liam</span></td>
+                                <td>Diamond Package (For Aunt Sarah)</td>
+                                <td class="fw-bold">$11.20</td>
+                                <td>
+                                    <div class="input-group input-group-sm" style="max-width: 150px;">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" class="form-control" placeholder="6.00" step="0.01">
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <button class="btn btn-primary btn-sm fw-bold">Authorize Payout Balance</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

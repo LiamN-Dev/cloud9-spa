@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card border-0 text-white shadow" style="border-radius: 20px !important; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;">
+            <div class="card-body p-4">
+                <small class="text-uppercase text-white-50 fw-bold tracking-wider d-block mb-1">Your Running Wallet Balance</small>
+                <h1 class="display-5 fw-bold mb-3">$42.50</h1>
+                <p class="small text-white-50 mb-0">💸 This tracking matrix represents what you are currently owed. Admin payouts reset this ledger total manually.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 mb-4">
+        <div class="card">
+            <div class="card-body p-4">
+                <h4 class="fw-bold text-dark mb-2">Your Assigned Shift Agenda</h4>
+                <p class="text-muted small mb-4">Keep track of your confirmed sessions. Click <strong>Complete Job</strong> when the session finishes to send it to your brother's payout validation queue.</p>
+                
+                <div class="list-group">
+                    <div class="list-group-item p-3 mb-2 border rounded-3 bg-light shadow-sm d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="badge bg-primary mb-2">Confirmed Job</span>
+                            <h5 class="mb-1 fw-bold text-dark">Diamond Package (45 min)</h5>
+                            <p class="mb-0 text-muted small"><strong>Client:</strong> Aunt Sarah • <strong>Time Slot:</strong> May 30 @ 2:00 PM</p>
+                            <p class="mb-0 text-muted small mt-1"><em>"Prefers a specific lavender lotion if available"</em></p>
+                        </div>
+                        <div>
+                            <button class="btn btn-success btn-sm fw-bold px-3 py-2 shadow-sm">Mark as Completed</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white border-0 shadow position-relative overflow-hidden mb-4" style="border-radius: 24px !important; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;">
+            <div class="card-body p-4">
+                <p class="text-uppercase small tracking-wider mb-1 text-white-50">Cloud 9 Loyalty Profile</p>
+                <h3 class="fw-bold mb-4">{{ session.get('full_name') }}</h3>
+                
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <small class="text-white-50 d-block">MEMBERSHIP TIER</small>
+                        <span class="badge bg-warning text-dark fw-bold px-3 py-2 mt-1">🥇 GOLD MEMBER</span>
+                    </div>
+                    <div class="text-end">
+                        <small class="text-white-50 d-block">REWARD POINTS</small>
+                        <span class="fs-3 fw-bold">342 pts</span>
+                    </div>
+                </div>
+                
+                <hr class="border-white-50">
+                
+                <div>
+                    <small class="text-white-50 d-block">YOUR PERSONAL EXCLUSIVE DISCOUNT</small>
+                    <span class="fs-4 fw-bold text-info">25.32% OFF Everything</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-body p-4">
+                <h5 class="fw-bold">Your Appointments</h5>
+                <p class="text-muted small">Track your pending requests and upcoming relaxation spots.</p>
+                <div class="list-group list-group-flush mt-3">
+                    <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-0 fw-bold">Diamond Package</h6>
+                            <small class="text-muted">May 30 at 2:00 PM</small>
+                        </div>
+                        <span class="badge bg-info">Pending Approval</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 mb-4">
+        <div class="card">
+            <div class="card-body p-4">
+                <h3 class="fw-bold text-primary mb-2">Request an Appointment</h3>
+                <p class="text-muted small mb-4">Pick a luxury session from the Cloud 9 Menu below. Prices shown below include your personal discounts automatically calculated.</p>
+                
+                <form method="POST" action="/appointments/request">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Select Spa Service</label>
+                        <select name="service_id" class="form-select form-select-lg">
+                            <optgroup label="✨ Premium Packages">
+                                <option value="1">Diamond Package (45 mins) — $11.20 (Earns 12 pts)</option>
+                                <option value="2">Gold Package (30 mins) — $7.47 (Earns 8 pts)</option>
+                            </optgroup>
+                            <optgroup label="⚡ Mini Packages">
+                                <option value="3">Quick Chill (10 mins) — $2.24 (Earns 2 pts)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">Preferred Date</label>
+                            <input type="date" name="date" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">Preferred Time Slot</label>
+                            <input type="time" name="time" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Special Instructions or Preferences</label>
+                        <textarea name="notes" class="form-control" rows="3" placeholder="Let us know if you want specific lotions, heat settings, or music..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold shadow">Submit Booking Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
