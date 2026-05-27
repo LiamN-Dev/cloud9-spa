@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow border-0 mt-4">
+            <div class="card-body p-4">
+                <h2 class="text-center fw-bold text-primary mb-4">Cloud 9 Portal Login</h2>
+                
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="mb-3">
+                        <label for="username" class="form-label fw-semibold">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="password" class="form-label fw-semibold">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 fw-bold py-2 shadow-sm">Log In</button>
+                </form>
+                
+                <div class="text-center mt-3">
+                    <a href="{{ url_for('register') }}" class="text-decoration-none small">Need an account? Request registration</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
