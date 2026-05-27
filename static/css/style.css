@@ -77,6 +77,7 @@ body {
 /* Hero Title Tweaks */
 .display-4 {
     background: linear-gradient(135deg, #2575fc 0%, #1a365d 100%);
-    -webkit-background-clip: text;
+    background-clip: text;         /* Added this standard line to fix the yellow warning! */
+    -webkit-background-clip: text; /* Keeps Chrome/Safari working */
     -webkit-text-fill-color: transparent;
 }
